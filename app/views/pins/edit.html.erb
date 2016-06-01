@@ -2,6 +2,8 @@
 	Edit Pin
 </h1>
 
+<%= image_tag @pin.image.url(:medium) %>
+
 <%= render 'form' %>
 
-<%= link_to "cancel", pin_path %>
+<%= link_to "cancel", pin_path%>
