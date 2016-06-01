@@ -14,16 +14,22 @@
 			</div>
 			<div class="panel-footer">
 			  <div class="row">
-			    <div class="col-md-6">
+			    <div class="col-md-5">
 						<p>
 							Submitted by: 
 							<%= @pin.user.email %>
 						</p>
 					</div>
-					<div class="col-md-6">
-						<%= link_to "Edit", edit_pin_path %>
-						<%= link_to "Delete", pin_path, method: :delete %>
-						<%= link_to "Back", root_path %>
+					<div class="col-md-7">
+						<%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success" do %>
+							<div class="span glyphicon glyphicon-heart">
+								<%= @pin.get_upvotes.size %>
+							</div>
+					  <% end %>
+						<%= link_to "Edit", edit_pin_path, class: "btn btn-primary" %> 
+						<%= link_to "Delete", pin_path, method: :delete, class: "btn btn-primary" %> 
+						<%= link_to "Back", root_path, class: "btn btn-primary" %>
+
 					</div>
 				</div>
 			</div>
