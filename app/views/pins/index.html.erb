@@ -1,7 +1,10 @@
 <div class="container well">
 	<% @pins.each do |pin| %>
+	<div class="well">
 	  <h2>
-	    <%= link_to pin.title, pin %>    
+	    <%= link_to pin.title, pin %> 
+	    <%= link_to (image_tag pin.image.url(:medium)), pin %>   
 	  </h2>
+	</div>
 	<% end %>
 </div>
